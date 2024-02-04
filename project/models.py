@@ -14,5 +14,12 @@ class Teacher(models.Model):
     def __str__(self):
         return self.name
 
+class Class(models.Model):
+    name = models.CharField(max_length=100)
+    teacher = models.ForeignKey(Teacher, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
+
 
 
