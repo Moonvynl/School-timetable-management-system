@@ -7,5 +7,12 @@ class Subject(models.Model):
     def __str__(self):
         return self.name
 
+class Teacher(models.Model):
+    name = models.CharField(max_length=100)
+    subjects = models.ForeignKey(Subject, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return self.name
+
 
 
